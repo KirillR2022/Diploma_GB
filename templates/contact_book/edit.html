@@ -1,0 +1,30 @@
+{% extends 'contact_book/base.html' %}
+
+{% block content %}
+    <h1>Редактирование профиля</h1>
+    <div class="col-6">
+    <form method="post" action="{{ url_for('edit_person', id=person.id) }}">
+        <div class="mb-3">
+            <label for="name" class="form-label">Имя</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{ person.name }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="birthday" class="form-label">Вес</label>
+            <input type="text" class="form-control" id="birthday" name="birthday" value="{{ person.weight }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="details" class="form-label">Подробности</label>
+            <textarea class="form-control" id="details" name="details" rows="3" required>{{ person.details }}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Телефон</label>
+            <input type="text" class="form-control" id="phone" name="phone" value="{{ person.age }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Адрес</label>
+            <input type="text" class="form-control" id="address" name="address" value="{{ person.owner_name }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </form>
+  </div>
+{% endblock %}
